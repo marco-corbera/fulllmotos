@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullmotos</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'whatsapp': '#25D366',
+                        'whatsapp-dark': '#20ba56',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse-shadow {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        .pulse-shadow {
+            animation: pulse-shadow 2s infinite;
+        }
+
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #4a4a4a 0%, #2b2b2b 100%);
+        }
+
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);
+        }
+
+        .bg-gradient-gray {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white text-gray-800 py-5 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-5 flex justify-between items-center flex-wrap gap-4">
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Fullmotos Logo" class="h-10 md:h-28 w-auto">
+            </div>
+            <a href="https://wa.me/51901587693"
+               class="flex items-center gap-3 bg-whatsapp bg-opacity-90 hover:bg-opacity-100 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105"
+               target="_blank">
+                <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="h-7 w-7">
+                <span class="text-xl font-bold tracking-wide text-white">901 587 693</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-[#2b2b2b] text-white pt-4 md:py-16 px-5 text-center hidden md:block">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-black font-bold text-2xl md:text-3xl mb-8 opacity-95">Encuentra los mejores productos para tu moto</p>
+            <a href="https://wa.me/51901587693"
+               class="inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-5 rounded-full text-2xl font-bold transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+               target="_blank">
+                <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="h-8 w-8">
+                Consultar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="max-w-7xl mx-auto pt-8 md:pb-16 px-5">
+        <h2 class="text-center text-4xl md:text-5xl font-bold mb-12 text-gray-800">Nuestros Productos</h2>
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Products will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-gradient-gray text-white py-20 px-5 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-5">¿Listo para hacer tu pedido?</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-95">Contáctanos ahora por WhatsApp</p>
+            <div class="text-5xl md:text-6xl font-bold my-8 tracking-wider">901 587 693</div>
+            <a href="https://wa.me/51901587693"
+               class="inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsapp-dark text-white px-16 py-5 rounded-full text-2xl font-bold transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+               target="_blank">
+                <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="h-8 w-8">
+                Enviar Mensaje
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2b2b2b] text-white py-8 px-5 text-center">
+        <p class="opacity-80 my-1">&copy; 2025 Fullmotos. Todos los derechos reservados.</p>
+        <p class="opacity-80 my-1">Contáctanos: +51 901 587 693</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/51901587693"
+       class="fixed bottom-8 right-8 bg-whatsapp w-[70px] h-[70px] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl z-50 transition-all duration-300 hover:scale-110 p-4 pulse-shadow"
+       target="_blank"
+       title="Contactar por WhatsApp">
+        <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="w-full h-full">
+    </a>
+
+    <script>
+        // Product data - Placeholder names (will be updated later)
+        const products = [
+            { id: 2, name: 'Neblinera Buho LED', image: 'assets/catalogo/2.png' },
+            { id: 3, name: 'Manubrios de Aluminio', image: 'assets/catalogo/3.png' },
+            { id: 4, name: 'Manubrios Deportivos', image: 'assets/catalogo/4.png' },
+            { id: 5, name: 'Soporte Antivibración', image: 'assets/catalogo/5.png' },
+            { id: 6, name: 'Guantes ICON', image: 'assets/catalogo/6.png' },
+            { id: 7, name: 'Tapa Barro Posterior Universal', image: 'assets/catalogo/7.png' },
+            { id: 8, name: 'Luces Direccionales LED', image: 'assets/catalogo/8.png' },
+            { id: 9, name: 'Faro Auxiliar', image: 'assets/catalogo/9.png' },
+            { id: 10, name: 'Cojín de asiento', image: 'assets/catalogo/10.png' },
+            { id: 11, name: 'Covertor M - L - XL', image: 'assets/catalogo/11.png' },
+            { id: 12, name: 'Base para Exploradora', image: 'assets/catalogo/12.png' },
+            { id: 13, name: 'Soporte para Barras Telescópicas', image: 'assets/catalogo/13.png' },
+            { id: 14, name: 'Interruptor', image: 'assets/catalogo/14.png' },
+            { id: 15, name: 'Empalme', image: 'assets/catalogo/15.png' }
+        ];
+
+        // Load products
+        function loadProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer';
+
+                const whatsappMessage = encodeURIComponent(`Hola! Me interesa el ${product.name}. ¿Podrías darme más información?`);
+                const whatsappUrl = `https://wa.me/51901587693?text=${whatsappMessage}`;
+
+                productCard.innerHTML = `
+                    <div class="w-full h-72 overflow-hidden bg-gray-50 flex items-center justify-center">
+                        <img src="${product.image}"
+                             alt="${product.name}"
+                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div class="p-5">
+                        <div class="text-lg font-bold mb-4 text-gray-800 min-h-[50px]">${product.name}</div>
+                        <a href="${whatsappUrl}"
+                           class="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white text-center py-3 px-5 rounded-lg font-bold transition-all duration-300 hover:scale-105"
+                           target="_blank">
+                            <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="h-5 w-5">
+                            Consultar Precio
+                        </a>
+                    </div>
+                `;
+
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+</body>
+</html>
